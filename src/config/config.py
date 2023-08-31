@@ -4,11 +4,11 @@ from sqlalchemy.orm import sessionmaker
 class DBConnection:
 
     def __init__(self) -> None:
-        self.__connection_string = 'mysql+pymysql://root:lhama@mysqldb/teste'
+        self.__connection= 'your connection string'
         self.session = None
     
     def __enter__(self):
-        engine = create_engine(self.__connection_string)
+        engine = create_engine(self.__connection)
         session_maker = sessionmaker()
         self.session = session_maker(bind=engine)
         return self
